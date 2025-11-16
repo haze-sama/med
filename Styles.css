@@ -1,0 +1,210 @@
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f7faff;
+    color: #1b2b40;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= HEADER ================= */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5edf4;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0d3b66;
+}
+
+.logo span {
+    color: #0095ff;
+}
+
+.nav-links a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #1a2b45;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #0095ff;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #1a2b45;
+    margin: 5px 0;
+    transition: .3s;
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    background: linear-gradient(120deg, #0095ff, #00c9ff);
+    color: white;
+    margin-top: 70px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+    max-width: 600px;
+}
+
+.hero p {
+    max-width: 500px;
+    font-size: 19px;
+    opacity: .9;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: white;
+    color: #007add;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: #e9f4ff;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 90px 50px;
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #0f2e4d;
+}
+
+.alt {
+    background: #eef6ff;
+}
+
+/* ================= CARDS ================= */
+.cards, .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 35px;
+}
+
+.card, .product {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    transition: .3s;
+}
+
+.card:hover, .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3, .product h3 {
+    color: #0095ff;
+    margin-bottom: 12px;
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #0f2e4d;
+    color: white;
+    padding: 35px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ================= ANIMACIONES ================= */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn .8s forwards;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp .9s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .hamburger { display: block; }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: white;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        transition: .4s;
+    }
+
+    .nav-links a {
+        margin: 20px 0;
+        font-size: 20px;
+    }
+
+    .show-nav {
+        right: 0 !important;
+    }
+
+    .hero h1 { font-size: 38px; }
+}
